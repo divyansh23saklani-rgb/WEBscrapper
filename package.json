@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "vite": "^7.1.6"
+  },
+  "dependencies": {
+    "lucide-react": "^0.544.0"
+  },
+  
+  "scripts": {
+    "dev:api": " uvicorn backend_file.main:app --reload ",
+    "dev:web": "npm --prefix ui/project run dev",
+    "dev": "concurrently --raw --handle-input --kill-others-on-fail -n api,web -c green,cyan \"npm:dev:api\" \"npm:dev:web\""
+  }
+
+}
